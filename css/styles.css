@@ -12,6 +12,8 @@
     --Components-Divider: rgba(145, 158, 171, 0.20);
     --components-main-light-primary: #00B8D9;
     --mainBg: #ffffff;
+    --Background-Paper: #FFF;
+    --Background-Neutral: #F4F6F8;
 }
 * {
     font-family: 'Manrope', sans-serif;
@@ -20,6 +22,7 @@
 }
 body {
     margin: 0;
+    padding: 0;
     background-color: var(--mainBg);
 }
 main {
@@ -30,6 +33,7 @@ main {
     display: flex;
 }
 .container.heading {
+    margin: 0 0 40px;
     justify-content: space-between;
     align-items: center;
 }
@@ -97,6 +101,7 @@ input[type=text], input[type=password] {
     line-height: 22px;
     border-radius: 8px;
     border: 1px solid var(--Components-Input-Outlined);    
+    outline: none;
 }
 input[type=button], input[type=submit] {
     padding: 11px 16px;
@@ -108,6 +113,7 @@ input[type=button], input[type=submit] {
     font-size: 15px;
     font-weight: 700;
     line-height: 26px;
+    cursor: pointer;
 }
 input.button {
     padding: 6px 12px;
@@ -219,6 +225,8 @@ input::placeholder {
     background: url(/images/menu/ic-label.svg) no-repeat 12px center;
 }
 /* submenu */
+.menu-container li menu {display: none;}
+.menu-container li.active menu {display: block;}
 .menu-container li menu a {
     display: block;
     padding: 7px 12px;
@@ -258,6 +266,7 @@ input::placeholder {
     flex: 1;
  }
 .breadcrumbs {
+    display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -274,6 +283,9 @@ input::placeholder {
     text-decoration: none;
     line-height: 22px;
 }
+.breadcrumbs li span {
+    line-height: 22px;
+}
 .breadcrumbs li::after {
     content: "";
     display: inline-block;
@@ -284,6 +296,70 @@ input::placeholder {
     border-radius: 2px;
     position: relative;
     top: -3px;
+}
+
+.table-container {
+    border-radius: 16px;
+    background: var(--Background-Paper);
+    box-shadow: 0px 0px 2px 0px rgba(145, 158, 171, 0.20), 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+}
+.table-container .table-head {
+    display: flex;
+    padding: 20px 8px 20px 20px;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;    
+}
+.table-container table {
+    width: 100%;
+}
+.table-container table thead {
+    background: var(--Background-Neutral);
+}
+.table-container table thead th {
+    padding: 16px;
+    color: var(--Text-Secondary);
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+}
+.table-container table td {
+    padding: 16px;
+    color: var(--Text-Primary);
+    line-height: 22px;
+}
+.table-container .container.pic {
+    gap: 16px;
+    align-items: center;
+}
+.table-container .pic span {
+    display: block;
+    color: var(--Text-Disabled);
+}
+
+div.select {
+    min-width: 200px;
+    padding: 8px 30px 8px 14px;
+    background: url(/images/ic-select_arrow.svg) no-repeat right 10px center;
+    border-radius: 8px;
+    border: 1px solid var(--Components-Input-Outlined);
+    cursor: pointer;
+}
+div.select > span {
+    color: var(--Text-Disabled);
+    line-height: 22px;
+}
+input.search {
+    padding: 8px 14px 8px 46px;
+    background: url(/images/ic-search.svg) no-repeat 14px center;
+    color: var(--Text-Disabled);
+}
+div.more {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    background: url(/images/ic-eva_more-vertical-fill.svg) no-repeat center;
+    cursor: pointer;
 }
 
 @media (hover:hover) {

@@ -25,6 +25,10 @@
             <menu>
                 <li class="menu-langs has-submenu">
                     <a href="#">Мови</a>
+                    <menu>
+                        <li><a href="#">Контент</a></li>
+                        <li><a href="#">Список мов</a></li>
+                    </menu>
                 </li>
                 <li class="menu-lib has-submenu active">
                     <a href="#">Бібліотека</a>
@@ -66,6 +70,44 @@
                     <input class="button add black" type="button" value="Завантажити  зображення" />
                 </div>
             </div>
+
+            <div class="table-container">
+                <div class="table-head">
+                    <div class="select"><span>Сортування</span></div>
+                    <div class="select"><span>Статус</span></div>
+                    <input type="text" class="search" placeholder="Пошук" />
+                    <div class="more"></div>
+                </div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <th><input type="checkbox" id="checkAll" /></th>
+                        <th>Файл</th>
+                        <th>Автор</th>
+                        <th>Дата створення</th>
+                        <th>Опублікована</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="check-1" /></td>
+                            <td>
+                                <div class="container pic">
+                                    <img width="64" height="64" src="/images/testpic.png" alt="" />
+                                    <div>
+                                        testpic.png
+                                        <span>20Kb</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Victoria</td>
+                            <td>29 Кві 2024</td>
+                            <td style="padding-left: 60px;"><input type="checkbox" id="published-1"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             
 
 
