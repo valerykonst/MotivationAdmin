@@ -576,7 +576,11 @@ span.item-view {
         box-shadow: 0px 8px 16px 0px rgba(255, 86, 48, 0.24);        
     }
     input.button.cancel:hover {
-        border: 1px solid var(--Text-Primary, #212B36);
         background: var(--transparent-grey-8, rgba(145, 158, 171, 0.08));        
+        border: 1px solid var(--Text-Primary, #212B36);
+    }
+    input.button.blue:hover {
+        background: var(--transparent-primary-8, rgba(0, 184, 217, 0.08));
+        border: 1px solid var(--Primary-Main, #00B8D9);
     }
 }
