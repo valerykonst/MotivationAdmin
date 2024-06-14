@@ -92,7 +92,7 @@
                             <td><input type="checkbox" id="check-1" /></td>
                             <td>
                                 <div class="container pic">
-                                    <img width="64" height="64" src="/images/testpic.png" alt="" />
+                                    <img onclick="openPic('/images/testpic_big.png')" width="64" height="64" src="/images/testpic.png" alt="" />
                                     <div>
                                         testpic.png
                                         <span>20Kb</span>
@@ -102,7 +102,48 @@
                             <td>Victoria</td>
                             <td>29 Кві 2024</td>
                             <td style="padding-left: 60px;"><input type="checkbox" id="published-1"></td>
-                            <td></td>
+                            <td>
+                                <span onclick="openPic('/images/testpic_big.png')" class="item-view"></span>
+                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="check-2" /></td>
+                            <td>
+                                <div class="container pic">
+                                    <img onclick="openPic('/images/testpic_big.png')" width="64" height="64" src="/images/testpic.png" alt="" />
+                                    <div>
+                                        testpic.png
+                                        <span>20Kb</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Victoria</td>
+                            <td>29 Кві 2024</td>
+                            <td style="padding-left: 60px;"><input type="checkbox" id="published-2"></td>
+                            <td>
+                                <span onclick="openPic('/images/testpic_big.png')" class="item-view"></span>
+                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="check-3" /></td>
+                            <td>
+                                <div class="container pic">
+                                    <img onclick="openPic('/images/testpic_big.png')" width="64" height="64" src="/images/testpic.png" alt="" />
+                                    <div>
+                                        testpic.png
+                                        <span>20Kb</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Victoria</td>
+                            <td>29 Кві 2024</td>
+                            <td style="padding-left: 60px;"><input type="checkbox" id="published-3"></td>
+                            <td>
+                                <span onclick="openPic('/images/testpic_big.png')" class="item-view"></span>
+                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -113,5 +154,60 @@
 
         </div>
     </main>
+
+
+    <div class="reveal" id="delete-reveal">
+        <div>
+            <div class="reveal-title">Видалити зображення?</div>
+            <div class="reveal-message">
+                Для видалення зображення спершу відв’яжіть його від теми.
+            </div>
+            <div class="reveal-buttons">
+                <input type="button" class="button delete" value="Видалити" />
+                <!--close button-->
+                <input onclick="this.closest('.reveal').style.display='none'" type="button" class="button cancel" value="Відмінити" />
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    function openReveal(elementId) {
+        const reveal = document.getElementById(elementId)
+        reveal.style.display = "flex"
+    }
+
+    function openPic(url) {
+        // make overlay
+        const wrap = document.createElement("div")
+        wrap.classList.add("overlay")
+        
+        // make pic and append it to overlay
+        const pic = document.createElement("img")
+        pic.src = url
+        wrap.appendChild(pic)
+
+        // make close & download buttons and append them to overlay
+        const buttonsContainer = document.createElement("div")
+        buttonsContainer.classList.add("overlay-buttons")
+        const closeButton = document.createElement("span")
+        closeButton.classList.add("overlay-close-button")
+        const downloadButton = document.createElement("span")
+        downloadButton.classList.add("overlay-download-button")
+        buttonsContainer.appendChild(downloadButton)
+        buttonsContainer.appendChild(closeButton)
+        wrap.appendChild(buttonsContainer)
+
+        // close handler
+        closeButton.addEventListener("click", () => {
+            wrap.remove()
+        })
+
+        // append overlay to body
+        const body = document.querySelector("body")        
+        body.appendChild(wrap)
+    }
+</script>    
+
 </body>
 </html>

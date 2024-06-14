@@ -23,9 +23,11 @@
             <!--login form-->
             <form method="get" id="login-form" class="login-form form" action="images-admin.html">
                 <div class="input-box">
+                    <label for="email">Email</label>
                     <input type="text" name="email" id="email" placeholder="Email" />
                 </div>
                 <div class="input-box">
+                    <label for="password">Пароль</label>
                     <input type="password" name="password" id="password" placeholder="Пароль" />
                     <span class="password-toggle-icon"></span>
                     <div class="error-message hidden">Невірний логін або пароль.</div>
@@ -69,12 +71,25 @@
                     document.getElementById("login-form").submit()
                 } else {
                     // show error 
-                    document.getElementById("email").classList.add("error")
-                    document.getElementById("password").classList.add("error")
+                    document.getElementById("email").closest(".input-box").classList.add("error")
+                    document.getElementById("password").closest(".input-box").classList.add("error")
                     document.querySelector(".error-message").classList.remove("hidden")
                     document.querySelector(".warning").classList.remove("hidden")
                 }
             })
+
+            // add to inputs listeners on focus and blur events
+           const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
+            // Attach event listeners to each input
+            inputs.forEach(input => {
+                input.addEventListener('focus', (event) => {
+                    event.target.closest(".input-box").classList.add('focus');
+                });
+                input.addEventListener('blur', (event) => {
+                    if(event.target.value === '')
+                        event.target.closest(".input-box").classList.remove('focus');
+                });
+            });            
 
 
         })
