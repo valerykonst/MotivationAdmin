@@ -15,6 +15,7 @@
     --mainBg: #ffffff;
     --Background-Paper: #FFF;
     --Background-Neutral: #F4F6F8;
+    --Primary-Main: #00B8D9;
 }
 * {
     font-family: 'Manrope', sans-serif;
@@ -132,7 +133,7 @@ form.login-form {
     flex-direction: column;
     gap: 20px;
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=search] {
     width: 100%;
     padding: 16px 14px;
     color: var(--Text-Disabled, #919EAB);
@@ -175,8 +176,14 @@ input.button.cancel {
     border: 1px solid var(--Components-Button-Outlined, rgba(145, 158, 171, 0.24));
     color: var(--Text-Primary);
 }
+input.button.blue {
+    background: white;
+    color: var(--Primary-Main);
+    border: 1px solid var(--transparent-primary-48, rgba(0, 184, 217, 0.48));
+ }
 .error input[type=text], .error input[type=password] {
     border: 2px solid var(--Error-Main);
+    transition: border 0.2s ease;
 }
 input::placeholder {
     color: var(--Text-Disabled);
@@ -214,6 +221,54 @@ input::placeholder {
 }
 .password-toggle-icon.show {
     background: url(/images/ic-solar_eye-closed-bold.svg) no-repeat center;
+}
+
+/* top panel */
+.top-panel {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 22px 0;
+}
+.top-panel input[type=search] {
+    flex-grow:1;
+    padding-left: 25px;
+    background: url(/images/ic-eva_search-fill.svg) no-repeat left center;
+    border: 0;
+    outline: none;
+}
+.top-panel input[type=button] {
+    width: auto;
+}
+.top-panel > span {
+    flex-shrink: 0;
+}
+.top-panel .flag {
+    width: 40px;
+    height: 40px;
+}
+.top-panel .flag.ua {
+    background: url(/images/flag-ua.svg) no-repeat center;
+}
+.top-panel .notification {
+    width: 40px;
+    height: 40px;
+    background: url(/images/ic-bell.svg) no-repeat center;
+}
+.top-panel .user-pic {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--transparent-grey-8, rgba(145, 158, 171, 0.08));
+    border-radius: 50px;
+}
+.top-panel .user-pic > span {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    border: 2px solid white;    
+    background: url(/images/avatar.png) no-repeat center white;
+    background-size: 36px;
 }
 
 /* left admin menu */
@@ -329,7 +384,7 @@ input::placeholder {
 
 
  main .content {
-    padding: 10px 40px 88px;
+    padding: 0 40px 88px;
     flex: 1;
  }
 .breadcrumbs {
@@ -413,7 +468,11 @@ input::placeholder {
     color: var(--Text-Disabled);
 }
 
+/* select option */
 div.select {
+    position: relative;
+}
+div.select > div.selected {
     min-width: 200px;
     padding: 8px 30px 8px 14px;
     background: url(/images/ic-select_arrow.svg) no-repeat right 10px center;
@@ -421,10 +480,34 @@ div.select {
     border: 1px solid var(--Components-Input-Outlined);
     cursor: pointer;
 }
-div.select > span {
+div.select > div.selected > span {
     color: var(--Text-Disabled);
     line-height: 22px;
 }
+div.select > .options {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    padding: 4px;
+    margin: 0;
+    list-style: none;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 2px 0px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24);    
+    position: absolute;
+}
+div.select.active > .options {
+    display: flex;
+}
+div.select > .options li a {
+    display: block;
+    padding: 8px;
+    color: var(--Text-Primary);
+    line-height: 22px;
+    text-decoration: none;
+}
+
 input.search {
     padding: 8px 14px 8px 46px;
     background: url(/images/ic-search.svg) no-repeat 14px center;
