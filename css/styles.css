@@ -64,7 +64,7 @@ main {
 .overlay-close-button {
     width: 36px;
     height: 36px;
-    background: url(/images/ic-mingcute_close-line.svg) no-repeat center rgba(0, 0, 0, 0.48);
+    background: url(images/ic-mingcute_close-line.svg) no-repeat center rgba(0, 0, 0, 0.48);
     filter: brightness(0) invert(1);
     border-radius: 18px;
     cursor: pointer;
@@ -72,7 +72,7 @@ main {
 .overlay-download-button {
     width: 36px;
     height: 36px;
-    background: url(/images/ic-eva_arrow-downward-fill.svg) no-repeat center rgba(0, 0, 0, 0.48);
+    background: url(images/ic-eva_arrow-downward-fill.svg) no-repeat center rgba(0, 0, 0, 0.48);
     filter: brightness(0) invert(1);
     border-radius: 18px;
     cursor: pointer;
@@ -87,7 +87,7 @@ main {
 form .error-message {
     margin: 8px 0 0 12px;
     padding: 0 0 0 20px;
-    background: url(/images/ic-eva_alert-triangle-fill.svg) no-repeat left center;
+    background: url(images/ic-eva_alert-triangle-fill.svg) no-repeat left center;
     color: var(--Error-Main);
     font-size: 12px;
 }
@@ -162,13 +162,13 @@ input.button {
 }
 input.button.add {
     padding-left: 40px;
-    background-image: url(/images/ic-add.svg);
+    background-image: url(images/ic-add.svg);
     background-repeat: no-repeat;
     background-position: 12px center;
 }
 input.button.delete {
     padding-left: 40px;
-    background: url(/images/ic-trash-white.svg) no-repeat 20px center var(--Error-Main);
+    background: url(images/ic-trash-white.svg) no-repeat 20px center var(--Error-Main);
     color: white;
 }
 input.button.cancel {
@@ -213,14 +213,14 @@ input::placeholder {
     display: block;
     width: 40px;
     height: 40px;
-    background: url(/images/ic-solar_eye-bold.svg) no-repeat center;
+    background: url(images/ic-solar_eye-bold.svg) no-repeat center;
     position: absolute;
     right: 0;
     top: 8px;
     cursor: pointer;
 }
 .password-toggle-icon.show {
-    background: url(/images/ic-solar_eye-closed-bold.svg) no-repeat center;
+    background: url(images/ic-solar_eye-closed-bold.svg) no-repeat center;
 }
 
 /* top panel */
@@ -233,7 +233,7 @@ input::placeholder {
 .top-panel input[type=search] {
     flex-grow:1;
     padding-left: 25px;
-    background: url(/images/ic-eva_search-fill.svg) no-repeat left center;
+    background: url(images/ic-eva_search-fill.svg) no-repeat left center;
     border: 0;
     outline: none;
 }
@@ -248,12 +248,12 @@ input::placeholder {
     height: 40px;
 }
 .top-panel .flag.ua {
-    background: url(/images/flag-ua.svg) no-repeat center;
+    background: url(images/flag-ua.svg) no-repeat center;
 }
 .top-panel .notification {
     width: 40px;
     height: 40px;
-    background: url(/images/ic-bell.svg) no-repeat center;
+    background: url(images/ic-bell.svg) no-repeat center;
 }
 .top-panel .user-pic {
     width: 40px;
@@ -267,7 +267,7 @@ input::placeholder {
     height: 36px;
     border-radius: 50px;
     border: 2px solid white;    
-    background: url(/images/avatar.png) no-repeat center white;
+    background: url(images/avatar.png) no-repeat center white;
     background-size: 36px;
 }
 
@@ -308,43 +308,43 @@ input::placeholder {
     width: 16px;
     height: 16px;
     margin: 0 24px 0 8px;
-    background: url(/images/menu/ic-eva_arrow-ios-forward-fill.svg);
+    background: url(images/menu/ic-eva_arrow-ios-forward-fill.svg);
     position: absolute;
     top: 12px;
     right: 0;
 }
 .menu-container menu li.menu-main > a {
-    background: url(/images/menu/ic-dashboard.svg) no-repeat 12px center;
+    background: url(images/menu/ic-dashboard.svg) no-repeat 12px center;
 }
 .menu-container > menu > li.active > a {
     filter: brightness(0) saturate(100%) invert(54%) sepia(34%) saturate(4620%) hue-rotate(148deg) brightness(90%) contrast(94%);    
 }
 .menu-container menu li.has-submenu.active > a:after {
-    background: url(/images/menu/ic-eva_arrow-ios-downward-fill.svg);
+    background: url(images/menu/ic-eva_arrow-ios-downward-fill.svg);
 }
 .menu-container menu li.menu-users > a {
-    background: url(/images/menu/ic-user.svg) no-repeat 12px center;
+    background: url(images/menu/ic-user.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-push > a {
-    background: url(/images/menu/ic-menu-item.svg) no-repeat 12px center;
+    background: url(images/menu/ic-menu-item.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-langs > a {
-    background: url(/images/menu/dictionary-language-book.svg) no-repeat 12px center;
+    background: url(images/menu/dictionary-language-book.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-lib > a {
-    background: url(/images/menu/ic-file.svg) no-repeat 12px center;
+    background: url(images/menu/ic-file.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-themes > a {
-    background: url(/images/menu/ic-kanban.svg) no-repeat 12px center;
+    background: url(images/menu/ic-kanban.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-archive > a {
-    background: url(/images/menu/ic-folder.svg) no-repeat 12px center;
+    background: url(images/menu/ic-folder.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-roles > a {
-    background: url(/images/menu/ic-tour.svg) no-repeat 12px center;
+    background: url(images/menu/ic-tour.svg) no-repeat 12px center;
 }
 .menu-container menu li.menu-api > a {
-    background: url(/images/menu/ic-label.svg) no-repeat 12px center;
+    background: url(images/menu/ic-label.svg) no-repeat 12px center;
 }
 /* submenu */
 .menu-container li menu {display: none;}
@@ -475,7 +475,7 @@ div.select {
 div.select > div.selected {
     min-width: 200px;
     padding: 8px 30px 8px 14px;
-    background: url(/images/ic-select_arrow.svg) no-repeat right 10px center;
+    background: url(images/ic-select_arrow.svg) no-repeat right 10px center;
     border-radius: 8px;
     border: 1px solid var(--Components-Input-Outlined);
     cursor: pointer;
@@ -510,28 +510,28 @@ div.select > .options li a {
 
 input.search {
     padding: 8px 14px 8px 46px;
-    background: url(/images/ic-search.svg) no-repeat 14px center;
+    background: url(images/ic-search.svg) no-repeat 14px center;
     color: var(--Text-Disabled);
 }
 div.more {
     width: 36px;
     height: 36px;
     margin-right: 10px;
-    background: url(/images/ic-eva_more-vertical-fill.svg) no-repeat center;
+    background: url(images/ic-eva_more-vertical-fill.svg) no-repeat center;
     cursor: pointer;
 }
 span.item-remove {
     display: inline-block;
     width: 36px;
     height: 36px;
-    background: url(/images/ic-solar_trash-bin-trash-bold.svg) no-repeat center;
+    background: url(images/ic-solar_trash-bin-trash-bold.svg) no-repeat center;
     cursor: pointer;
 }
 span.item-view {
     display: inline-block;
     width: 36px;
     height: 36px;
-    background: url(/images/ic-solar_eye-bold.svg) no-repeat center;
+    background: url(images/ic-solar_eye-bold.svg) no-repeat center;
     background-size: 20px;
     cursor: pointer;
 }
