@@ -166,6 +166,12 @@ input.button.add {
     background-repeat: no-repeat;
     background-position: 12px center;
 }
+input.button.upload {
+    padding-left: 40px;
+    background-image: url(../images/ic-upload.svg);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
 input.button.delete {
     padding-left: 40px;
     background: url(../images/ic-trash-white.svg) no-repeat 20px center var(--Error-Main);
@@ -445,11 +451,15 @@ input::placeholder {
     font-weight: 600;
     line-height: 24px;
     text-align: left;
+    white-space: nowrap;
 }
 .table-container table td {
     padding: 16px;
     color: var(--Text-Primary);
     line-height: 22px;
+    border-bottom: 1px dashed var(--Components-Divider);
+    background: var(--Background-Paper);
+    white-space: nowrap;
 }
 .table-container .container.pic {
     gap: 16px;
@@ -467,6 +477,38 @@ input::placeholder {
     display: block;
     color: var(--Text-Disabled);
 }
+
+/* paginator */
+.paginator {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 8px;
+    color: var(--Text-Primary);
+    line-height: 22px;
+}
+.paginator span.left-arrow, .paginator span.right-arrow {
+    width: 36px;
+    height: 36px;
+    background: url(../images/ic-eva_arrow-ios-forward-fill.svg) no-repeat center;
+    cursor: pointer;
+}
+.paginator span.selected {
+    padding-right: 20px;
+    background: url(../images/ic-eva_arrow-ios-downward-fill.svg) no-repeat right center;
+    cursor: pointer;
+}
+.paginator span.left-arrow {
+    background: url(../images/ic-eva_arrow-ios-back-fill.svg) no-repeat center;
+}
+.paginator span.inactive {
+    filter: brightness(1.2) contrast(1.1) sepia(0.2) saturate(1.5) hue-rotate(180deg) opacity(0.6);
+}
+.paginator > div {
+    display: flex;
+}
+
 
 /* select option */
 div.select {
@@ -564,6 +606,96 @@ span.item-view {
     gap: 12px;
     justify-content: flex-end;
     padding: 24px;
+}
+
+#upload-reveal > div {
+    width: 600px;
+}
+#upload-reveal input[type=button] {
+    width: auto;
+}
+.upload-files-wrapper > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    height: 334px;
+    border-radius: 8px;
+    border: 1px dashed var(--Components-Input-Outlined, rgba(145, 158, 171, 0.20));
+    background: url(../images/illustration_upload.png) no-repeat center 40px  var(--transparent-grey-8, rgba(145, 158, 171, 0.08));
+    background-size: 200px;
+}
+.upload-files-wrapper .title {
+    margin-bottom: 8px;
+    color: var(--Text-Primary);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.upload-files-wrapper .text {
+    color: var(--Text-Secondary, #637381);
+    text-align: center;
+    line-height: 22px;
+}
+.upload-files-wrapper .text a {
+    color: var(--Primary-Main);
+    text-decoration: none;
+}
+.upload-files-wrapper .uploaded-pics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 20px;
+}
+.upload-files-wrapper .uploaded-pics img {
+    border-radius: 8px;
+}
+.upload-files-wrapper .uploaded-pics > div {
+    position: relative;
+}
+.upload-files-wrapper .uploaded-pics span.delete-pic {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background: url(../images/ic-close.svg) no-repeat center var(--transparent-black-48, rgba(0, 0, 0, 0.48));
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+}
+.upload-files-wrapper .uploaded-audio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 0;
+}
+.upload-files-wrapper .uploaded-audio > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 7px 10px 7px 0;
+    border-radius: 12px;
+    border: 1px solid var(--Components-Paper-Outlined, rgba(145, 158, 171, 0.16));
+    color: var(--Text-Primary);
+}
+.upload-files-wrapper .uploaded-audio > div > span:first-child {
+    width: 273px;
+    padding: 8px 0 8px 54px;
+    background: url(../images/ic-file.svg) no-repeat 16px center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.upload-files-wrapper .uploaded-audio > div > span.audio-delete {
+    width: 36px;
+    height: 36px;
+    background: url(../images/ic-mingcute_close-line.svg) no-repeat center;
+    cursor: pointer;
 }
 
 
