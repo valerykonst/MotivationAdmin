@@ -542,12 +542,12 @@ div.select > .options {
 div.select.active > .options {
     display: flex;
 }
-div.select > .options li a {
-    display: block;
+div.select > .options li {
     padding: 8px;
     color: var(--Text-Primary);
     line-height: 22px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 input.search {
