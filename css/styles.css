@@ -461,6 +461,9 @@ input::placeholder {
     background: var(--Background-Paper);
     white-space: nowrap;
 }
+.table-container table td:last-child {
+    text-align: end;
+}
 .table-container .container.pic {
     gap: 16px;
     align-items: center;

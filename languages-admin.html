@@ -24,17 +24,17 @@
 
             <div class="menu-title">Контент</div>
             <menu>
-                <li class="menu-langs has-submenu">
+                <li class="menu-langs has-submenu active">
                     <a onclick="toggleSubmenu(this)" href="#">Мови</a>
                     <menu>
                         <li><a href="#">Контент</a></li>
-                        <li><a href="languages-admin.html">Список мов</a></li>
+                        <li class="active"><a href="languages-admin.html">Список мов</a></li>
                     </menu>
                 </li>
-                <li class="menu-lib has-submenu active">
+                <li class="menu-lib has-submenu">
                     <a onclick="toggleSubmenu(this)" href="#">Бібліотека</a>
                     <menu>
-                        <li class="active"><a href="images-admin.html">Зображення</a></li>
+                        <li><a href="images-admin.html">Зображення</a></li>
                         <li><a href="#">Відео</a></li>
                         <li><a href="#">Звуки</a></li>
                         <li><a href="#">Шрифти</a></li>
@@ -68,99 +68,54 @@
 
             <div class="container heading">
                 <div>
-                    <h1>Зображення</h1>
+                    <h1>Мови</h1>
                     <menu class="breadcrumbs">
                         <li><a href="#">Головна</a></li>
-                        <li><a href="#">Бібліотека</a></li>
-                        <li><span>Зображення</span></li>
+                        <li><span>Мови</span></li>
                     </menu>                    
                 </div>
                 <div>
-                    <input class="button add black" onclick="openReveal('upload-reveal')" type="button" value="Завантажити  зображення" />
+                    <input class="button add black" onclick="openReveal('upload-reveal')" type="button" value="Додати мову" />
                 </div>
             </div>
 
             <div class="table-container">
                 <div class="table-head">
-                    <select id="select-order">
-                        <option value="">Сортування</option>
-                        <option value="1">option 1</option>
-                        <option value="2">option 2</option>
-                        <option value="3">option 3</option>
-                    </select>
-                    <select id="select-status">
-                        <option value="">Статус</option>
-                        <option value="1">option 1</option>
-                        <option value="2">option 2</option>
-                        <option value="3">option 3</option>
-                    </select>
                     <input type="search" class="search" placeholder="Пошук" />
                     <div class="more"></div>
                 </div>
                 <table cellpadding="0" cellspacing="0" border="0">
                     <thead>
                         <th><input type="checkbox" id="checkAll" /></th>
-                        <th>Файл</th>
-                        <th>Автор</th>
-                        <th>Дата створення</th>
-                        <th>Опублікована</th>
+                        <th>Код</th>
+                        <th>Назва</th>
                         <th></th>
                     </thead>
                     <tbody>
                         <tr>
                             <td><input type="checkbox" id="check-1" /></td>
+                            <td>EN</td>
+                            <td>English</td>
                             <td>
-                                <div class="container pic">
-                                    <img onclick="openPic('images/testpic_big.png')" width="64" height="64" src="images/testpic.png" alt="" />
-                                    <div>
-                                        testpic.png
-                                        <span>20Kb</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Victoria</td>
-                            <td>29 Кві 2024</td>
-                            <td style="padding-left: 60px;"><input type="checkbox" id="published-1"></td>
-                            <td>
-                                <span onclick="openPic('images/testpic_big.png')" class="item-view"></span>
+                                <span class="item-view"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" id="check-2" /></td>
+                            <td>UK</td>
+                            <td>Ukrainian</td>
                             <td>
-                                <div class="container pic">
-                                    <img onclick="openPic('images/testpic_big.png')" width="64" height="64" src="images/testpic.png" alt="" />
-                                    <div>
-                                        testpic.png
-                                        <span>20Kb</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Victoria</td>
-                            <td>29 Кві 2024</td>
-                            <td style="padding-left: 60px;"><input type="checkbox" id="published-2"></td>
-                            <td>
-                                <span onclick="openPic('images/testpic_big.png')" class="item-view"></span>
+                                <span class="item-view"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" id="check-3" /></td>
+                            <td>PL</td>
+                            <td>Polish</td>
                             <td>
-                                <div class="container pic">
-                                    <img onclick="openPic('images/testpic_big.png')" width="64" height="64" src="images/testpic.png" alt="" />
-                                    <div>
-                                        testpic.png
-                                        <span>20Kb</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Victoria</td>
-                            <td>29 Кві 2024</td>
-                            <td style="padding-left: 60px;"><input type="checkbox" id="published-3"></td>
-                            <td>
-                                <span onclick="openPic('images/testpic_big.png')" class="item-view"></span>
+                                <span class="item-view"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
@@ -186,10 +141,7 @@
 
     <div class="reveal" id="delete-reveal">
         <div>
-            <div class="reveal-title">Видалити зображення?</div>
-            <div class="reveal-message">
-                Для видалення зображення спершу відв’яжіть його від теми.
-            </div>
+            <div class="reveal-title">Видалити мову?</div>
             <div class="reveal-buttons">
                 <input type="button" class="button delete" value="Видалити" />
                 <!--close button-->
@@ -200,58 +152,28 @@
 
     <div class="reveal" id="upload-reveal">
         <div>
-            <div class="reveal-title">Завантажити файл</div>
+            <div class="reveal-title">Редагування мови</div>
             <div class="reveal-message">
-                <div class="upload-files-wrapper">
-                    <div>
-                        <div class="title">Оберіть файли</div>
-                        <div class="text">
-                            Перетягніть файли сюди або натисніть <a href="#">«Переглянути»</a> на своєму комп’ютері
-                        </div>
-                    </div>
-                    <div class="uploaded-pics">
-                        <div id="pic-1">
-                            <img width="72" height="72" src="images/testpic.png" alt="" />
-                            <span class="delete-pic" onclick="deletePic('pic-1')"></span>
-                        </div>
-                        <div id="pic-2">
-                            <img width="72" height="72" src="images/testpic.png" alt="" />
-                            <span class="delete-pic" onclick="deletePic('pic-2')"></span>
-                        </div>
-                        <div id="pic-3">
-                            <img width="72" height="72" src="images/testpic.png" alt="" />
-                            <span class="delete-pic" onclick="deletePic('pic-3')"></span>
-                        </div>
-                    </div>
-                    <div class="uploaded-audio">
-                        <div id="audio-file-1">
-                            <span class="audio-filename">legislation-grain.mp3</span>
-                            <span class="audio-filesize">16,0 MB</span>
-                            <span class="audio-delete" onclick="deleteAudioFile('audio-file-1')"></span>
-                        </div>
-                        <div id="audio-file-2">
-                            <span class="audio-filename">legislation-grain.mp3</span>
-                            <span class="audio-filesize">16,0 MB</span>
-                            <span class="audio-delete" onclick="deleteAudioFile('audio-file-2')"></span>
-                        </div>
-                        <div id="audio-file-3">
-                            <span class="audio-filename">legislation-grain.mp3</span>
-                            <span class="audio-filesize">16,0 MB</span>
-                            <span class="audio-delete" onclick="deleteAudioFile('audio-file-3')"></span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="reveal-buttons">
                 <!--close button-->
                 <input onclick="this.closest('.reveal').style.display='none'" type="button" class="button cancel" value="Відмінити" />
-                <input type="button" class="button upload" value="Завантажити" />
+                <input type="button" class="button" value="Зберігти" />
             </div>
         </div>
     </div>
 
 
 <script>
+
+    function toggleSubmenu(el) {
+        if(el.parentElement.classList.contains("active")) {
+            el.parentElement.classList.remove("active")
+        } else {
+            el.parentElement.classList.add("active")
+        }
+    }
+
     function openSelect(el) {
         if(el.closest('.select').classList.contains("active")) {
             el.closest('.select').classList.remove("active")
@@ -313,13 +235,6 @@
         // @todo
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const selectOrderElement = document.getElementById('select-order');
-        new CustomSelect(selectOrderElement);
-
-        const selectStatusElement = document.getElementById('select-status');
-        new CustomSelect(selectStatusElement);
-});
 </script>    
 
 </body>
