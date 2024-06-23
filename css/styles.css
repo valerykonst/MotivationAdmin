@@ -196,6 +196,7 @@ input::placeholder {
 }
 .input-box {
     position: relative;
+    line-height: 1em;
 }
 .input-box label {
     display: none;
@@ -214,6 +215,15 @@ input::placeholder {
 .input-box.error label {
     display: block;
     color: var(--Error-Main);
+}
+.input-box span.info {
+    display: block;
+    margin: 8px 0 0 12px;
+    padding: 0 0 0 20px;
+    background: url(/images/ic-eva_info-fill.svg) no-repeat left center;
+    color: var(--Text-Secondary);
+    font-size: 12px;
+    line-height: 18px;
 }
 .password-toggle-icon {
     display: block;
@@ -572,6 +582,13 @@ span.item-remove {
     background: url(../images/ic-solar_trash-bin-trash-bold.svg) no-repeat center;
     cursor: pointer;
 }
+span.item-edit {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url(../images/ic-solar_pen-bold.svg) no-repeat center;
+    cursor: pointer;
+}
 span.item-view {
     display: inline-block;
     width: 36px;
@@ -611,10 +628,10 @@ span.item-view {
     padding: 24px;
 }
 
-#upload-reveal > div {
+#upload-reveal > div, #edit-reveal > div {
     width: 600px;
 }
-#upload-reveal input[type=button] {
+#upload-reveal input[type=button], #edit-reveal input[type=button] {
     width: auto;
 }
 .upload-files-wrapper > div:first-child {

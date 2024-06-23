@@ -75,7 +75,7 @@
                     </menu>                    
                 </div>
                 <div>
-                    <input class="button add black" onclick="openReveal('upload-reveal')" type="button" value="Додати мову" />
+                    <input class="button add black" onclick="openReveal('edit-reveal')" type="button" value="Додати мову" />
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
                             <td>EN</td>
                             <td>English</td>
                             <td>
-                                <span class="item-view"></span>
+                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
@@ -106,7 +106,7 @@
                             <td>UK</td>
                             <td>Ukrainian</td>
                             <td>
-                                <span class="item-view"></span>
+                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
@@ -115,7 +115,7 @@
                             <td>PL</td>
                             <td>Polish</td>
                             <td>
-                                <span class="item-view"></span>
+                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
                                 <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
                             </td>
                         </tr>
@@ -150,10 +150,20 @@
         </div>
     </div>
 
-    <div class="reveal" id="upload-reveal">
+    <div class="reveal" id="edit-reveal">
         <div>
             <div class="reveal-title">Редагування мови</div>
-            <div class="reveal-message">
+            <div class="reveal-message" style="display: flex; flex-direction: column; gap: 24px;">
+                <div class="input-box">
+                    <label for="lang-name-id">Назва мови</label>
+                    <input id="lang-name-id" name="lang_name" type="text" placeholder="Назва мови" />
+                    <span class="info">Вказати назву на мові орігіналу</span>
+                </div>
+                <div class="input-box">
+                    <label for="lang-name-code">Код мови</label>
+                    <input id="lang-name-code" name="lang_code" type="text" placeholder="Код мови" />
+                    <span class="info">Наприклад: EN, RU, UK</span>
+                </div>
             </div>
             <div class="reveal-buttons">
                 <!--close button-->
@@ -234,6 +244,22 @@
         document.getElementById(audioId).remove()
         // @todo
     }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+            // add to inputs listeners on focus and blur events
+            const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
+            // Attach event listeners to each input
+            inputs.forEach(input => {
+                input.addEventListener('focus', (event) => {
+                    event.target.closest(".input-box").classList.add('focus');
+                });
+                input.addEventListener('blur', (event) => {
+                    if(event.target.value === '')
+                        event.target.closest(".input-box").classList.remove('focus');
+                });
+            });            
+    });            
 
 </script>    
 
