@@ -27,8 +27,8 @@
                 <li class="menu-langs has-submenu active">
                     <a onclick="toggleSubmenu(this)" href="#">Мови</a>
                     <menu>
-                        <li><a href="content-admin.html">Контент</a></li>
-                        <li class="active"><a href="languages-admin.html">Список мов</a></li>
+                        <li class="active"><a href="content-admin.html">Контент</a></li>
+                        <li><a href="languages-admin.html">Список мов</a></li>
                     </menu>
                 </li>
                 <li class="menu-lib has-submenu">
@@ -68,67 +68,69 @@
 
             <div class="container heading">
                 <div>
-                    <h1>Мови</h1>
+                    <h1>Контент</h1>
                     <menu class="breadcrumbs">
                         <li><a href="#">Головна</a></li>
-                        <li><span>Мови</span></li>
+                        <li><a href="#">Мови</a></li>
+                        <li><span>Контент</span></li>
                     </menu>                    
-                </div>
-                <div>
-                    <input class="button add black" onclick="openReveal('edit-reveal')" type="button" value="Додати мову" />
                 </div>
             </div>
 
+            <div class="container" style="margin: 0 0 40px; justify-content: space-between;">
+                <div>
+                    <select id="select-language">
+                        <option value="">Мова</option>
+                        <option value="en">English</option>
+                        <option value="uk">Ukrainian</option>
+                        <option value="pl">Polish</option>
+                    </select>
+                </div>
+                <div class="container" style="gap: 16px;">
+                    <input class="button cancel import" type="button" value="Імпорт" />
+                    <input class="button cancel export" type="button" value="Експорт" />
+                </div>
+            </div>
+
+            <div class="tabs container">
+                <a href="#">Категорії</a>
+                <a href="#">Підкатегорії</a>
+                <a href="#" class="active">Цитати</a>
+                <a href="#">Автори</a>
+            </div>
+
+
             <div class="table-container">
                 <div class="table-head">
+                    <select id="select-order">
+                        <option value="">Сортування</option>
+                        <option value="1">option 1</option>
+                        <option value="2">option 2</option>
+                        <option value="3">option 3</option>
+                    </select>
+                    <select id="select-status">
+                        <option value="">Статус</option>
+                        <option value="1">option 1</option>
+                        <option value="2">option 2</option>
+                        <option value="3">option 3</option>
+                    </select>
                     <input type="search" class="search" placeholder="Пошук" />
+                    <input type="button" class="button add" onclick="openReveal('edit-reveal')" value="Додати цитату" style="width: auto;" />
                     <div class="more"></div>
                 </div>
                 <table cellpadding="0" cellspacing="0" border="0">
                     <thead>
                         <th><input type="checkbox" id="checkAll" /></th>
-                        <th>Код</th>
-                        <th>Назва</th>
-                        <th></th>
+                        <th class="sort">ID</th>
+                        <th>Цитата</th>
+                        <th>Автор цитати</th>
+                        <th>Підкатегорії</th>
+                        <th>Створенно</th>
+                        <th>Опублікована</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox" id="check-1" /></td>
-                            <td>EN</td>
-                            <td>English</td>
-                            <td>
-                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
-                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="check-2" /></td>
-                            <td>UK</td>
-                            <td>Ukrainian</td>
-                            <td>
-                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
-                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="check-3" /></td>
-                            <td>PL</td>
-                            <td>Polish</td>
-                            <td>
-                                <span onclick="openReveal('edit-reveal')" class="item-edit"></span>
-                                <span onclick="openReveal('delete-reveal')" class="item-remove"></span>
-                            </td>
-                        </tr>
-                    </tbody>
                 </table>
-                <div class="paginator">
-                    <span>На сторінці :</span>
-                    <span class="selected">5</span>
-                    <span>6-10 of 11</span>
-                    <div>
-                        <span class="left-arrow inactive"></span>
-                        <span class="right-arrow"></span>
-                    </div>
+                <div class="no-data">
+                    Данні відсутні
                 </div>
             </div>
 
@@ -202,8 +204,17 @@
                         event.target.closest(".input-box").classList.remove('focus');
                 });
             });            
-    });            
 
+        const selectOrderElement = document.getElementById('select-order');
+        new CustomSelect(selectOrderElement);
+
+        const selectStatusElement = document.getElementById('select-status');
+        new CustomSelect(selectStatusElement);
+
+        const selectLanguageElement = document.getElementById('select-language');
+        new CustomSelect(selectLanguageElement);
+    });     
+    
 </script>    
 
 </body>

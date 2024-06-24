@@ -27,7 +27,7 @@
                 <li class="menu-langs has-submenu">
                     <a onclick="toggleSubmenu(this)" href="#">Мови</a>
                     <menu>
-                        <li><a href="#">Контент</a></li>
+                        <li><a href="content-admin.html">Контент</a></li>
                         <li><a href="languages-admin.html">Список мов</a></li>
                     </menu>
                 </li>
@@ -252,17 +252,6 @@
 
 
 <script>
-    function openSelect(el) {
-        if(el.closest('.select').classList.contains("active")) {
-            el.closest('.select').classList.remove("active")
-        } else {
-            document.querySelectorAll(".select").forEach(item => {
-                item.classList.remove("active")
-            })
-            el.closest('.select').classList.add("active")
-        }
-    }
-
     function openReveal(elementId) {
         const reveal = document.getElementById(elementId)
         reveal.style.display = "flex"
@@ -319,7 +308,7 @@
 
         const selectStatusElement = document.getElementById('select-status');
         new CustomSelect(selectStatusElement);
-});
+    });
 </script>    
 
 </body>

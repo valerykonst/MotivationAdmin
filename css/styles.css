@@ -172,13 +172,25 @@ input.button.upload {
     background-repeat: no-repeat;
     background-position: 12px center;
 }
+input.button.import {
+    padding-left: 40px;
+    background-image: url(../images/ic-import.svg);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+input.button.export {
+    padding-left: 40px;
+    background-image: url(../images/ic-export.svg);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
 input.button.delete {
     padding-left: 40px;
     background: url(../images/ic-trash-white.svg) no-repeat 20px center var(--Error-Main);
     color: white;
 }
 input.button.cancel {
-    background: white;
+    background-color: white;
     border: 1px solid var(--Components-Button-Outlined, rgba(145, 158, 171, 0.24));
     color: var(--Text-Primary);
 }
@@ -423,6 +435,7 @@ input::placeholder {
 }
 .breadcrumbs li span {
     line-height: 22px;
+    color: var(--Text-Disabled);
 }
 .breadcrumbs li::after {
     content: "";
@@ -436,8 +449,30 @@ input::placeholder {
     top: -3px;
 }
 
+/* tabs menu */
+.tabs {
+    gap: 40px;
+    padding: 0 20px;
+    margin: 0 0 10px;
+    border-bottom: 2px solid var(--transparent-grey-8, rgba(145, 158, 171, 0.08));
+}
+.tabs a {
+    padding: 13px 0 12px;
+    color: var(--Text-Secondary);
+    text-decoration: none;
+}
+.tabs a.active {
+    padding-top: 11px;
+    border-bottom: 2px solid var(--Text-Primary, #212B36);
+    color: var(--Text-Primary);
+    position: relative;
+    top: 2px;
+}
+
+
 /* table */
 .table-container {
+    padding: 0 0 1px;
     border-radius: 16px;
     background: var(--Background-Paper);
     box-shadow: 0px 0px 2px 0px rgba(145, 158, 171, 0.20), 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
@@ -462,6 +497,20 @@ input::placeholder {
     line-height: 24px;
     text-align: left;
     white-space: nowrap;
+}
+.table-container table thead th.sort {
+    color: var(--Text-Primary);
+    cursor: pointer;
+}
+.table-container table thead th.sort::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    background: url(../images/ic-eva_arrow-downward-fill.svg) no-repeat center;
+    position: relative;
+    top: 4px;
 }
 .table-container table td {
     padding: 16px;
@@ -489,6 +538,20 @@ input::placeholder {
 .table-container .pic span {
     display: block;
     color: var(--Text-Disabled);
+}
+
+.no-data {
+    text-align: center;
+    padding: 185px 40px 40px;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--Components-Input-Outlined, rgba(145, 158, 171, 0.20));
+    background: url(../images/ic_content.png) no-repeat center 40px var(--transparent-grey-8, rgba(145, 158, 171, 0.08));
+    background-size: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Text-Primary);
+    
 }
 
 /* paginator */
@@ -551,6 +614,7 @@ div.select > .options {
     border-radius: 12px;
     box-shadow: 0px 0px 2px 0px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24);    
     position: absolute;
+    z-index: 1;
 }
 div.select.active > .options {
     display: flex;
@@ -728,7 +792,7 @@ span.item-view {
         box-shadow: 0px 8px 16px 0px rgba(255, 86, 48, 0.24);        
     }
     input.button.cancel:hover {
-        background: var(--transparent-grey-8, rgba(145, 158, 171, 0.08));        
+        background-color: var(--transparent-grey-8, rgba(145, 158, 171, 0.08));        
         border: 1px solid var(--Text-Primary, #212B36);
     }
     input.button.blue:hover {
