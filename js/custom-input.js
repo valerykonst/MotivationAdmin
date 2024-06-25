@@ -1,3 +1,26 @@
+/*
+ To use custom input for instance do
+
+    HTML:
+    <div class="input-box">
+        <label for="phrase-author">Автор</label>
+        <div id="phrase-author" data-type="single" data-name="phrase_author" data-placeholder="Приклад: Haruki Murakami"></div>
+    </div>
+    <div class="input-box">
+        <div id="phrase-category" data-type="multiple" data-name="phrase_category" data-placeholder="+ Підкатегорія"></div>
+        <span class="info">Цитата повинна бути прив’язана до підкатегорії</span>
+    </div>
+
+    JS:
+    <script>
+        const authorSuggestions = ["CEO", "Quality Assurance Tester", "Public Relations Officer", "Compliance Officer"];
+        const categorySuggestions = ["UI", "UX", "Html", "JavaScript", "TypeScript", "Communication", "Problem Solving", "Leadership", "Time Management"];
+
+        new CustomInput(document.getElementById('phrase-author'), authorSuggestions);
+        new CustomInput(document.getElementById('phrase-category'), categorySuggestions);
+    </script>
+*/
+
 class CustomInput {
     constructor(container, suggestions) {
         this.container = container;
