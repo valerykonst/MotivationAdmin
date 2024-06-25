@@ -59,6 +59,8 @@ class CustomInput {
 
         this.input.addEventListener('input', this.onInput.bind(this));
         this.input.addEventListener('keydown', this.onKeyDown.bind(this));
+        this.input.addEventListener('focus', this.onFocus.bind(this));
+        this.input.addEventListener('blur', this.onBlur.bind(this));
     }
 
     onInput(event) {
@@ -96,6 +98,17 @@ class CustomInput {
             }
         } else if (event.key === 'Escape') {
             this.dropdown.innerHTML = '';
+        }
+    }
+
+    onFocus(event) {
+        this.input.closest(".input-box").classList.add('focus')
+    }
+
+    onBlur(event) {
+        const value = event.target.value.toLowerCase();
+        if(!value) {
+            this.input.closest(".input-box").classList.remove('focus')
         }
     }
 

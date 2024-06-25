@@ -224,6 +224,7 @@ input::placeholder {
 }
 .input-box.focus label {
     display: block;
+    z-index: 1;
 }
 .input-box.error label {
     display: block;
