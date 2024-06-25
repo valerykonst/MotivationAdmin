@@ -2,7 +2,8 @@
     --Text-Primary: #212B36;
     --Text-Disabled: #919EAB;
     --Text-Secondary: #637381;
-    --Components-Input-Outlined: rgba(145, 158, 171, 0.20);
+    --Components-Input-Outlined: rgba(145, 158, 171, 0.4);
+    --Components-Button-Outlined: rgba(145, 158, 171, 0.24);
     --Components-Button-Contained-Inherit-Text: white;
     --Components-Button-Contained-Inherit-Bg: #212B36;
     --Components-Button-Contained-Inherit-BgHover: #454F5B;
@@ -191,7 +192,7 @@ input.button.delete {
 }
 input.button.cancel {
     background-color: white;
-    border: 1px solid var(--Components-Button-Outlined, rgba(145, 158, 171, 0.24));
+    border: 1px solid var(--Components-Button-Outlined);
     color: var(--Text-Primary);
 }
 input.button.blue {
@@ -545,7 +546,7 @@ input::placeholder {
     padding: 185px 40px 40px;
     margin: 20px;
     border-radius: 8px;
-    border: 1px dashed var(--Components-Input-Outlined, rgba(145, 158, 171, 0.20));
+    border: 1px dashed var(--Components-Input-Outlined);
     background: url(../images/ic_content.png) no-repeat center 40px var(--transparent-grey-8, rgba(145, 158, 171, 0.08));
     background-size: 120px;
     font-size: 18px;
@@ -626,6 +627,64 @@ div.select > .options li {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Custom Input */
+.custom-input {
+    border: 1px solid var(--Components-Input-Outlined);
+    border-radius: 8px;
+    position: relative;
+}
+.custom-input input[type="text"] {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 1000;
+}
+.dropdown:empty {
+    display: none;
+}
+.dropdown div {
+    padding: 10px;
+    cursor: pointer;
+}
+.dropdown div:hover, .dropdown div.highlighted {
+    background: #f0f0f0;
+}
+.dropdown div:hover {
+    background: #f0f0f0;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag {
+    background: #e0e0e0;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+.tag span {
+    margin-right: 5px;
+}
+.tag .remove-tag {
+    cursor: pointer;
+    background: #ff0000;
+    border-radius: 50%;
+    color: white;
+    padding: 0 5px;
+}
+/********************/
+
 
 input.search {
     padding: 8px 14px 8px 46px;

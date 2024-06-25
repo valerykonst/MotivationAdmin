@@ -7,6 +7,7 @@
     <link href="https://fonts.cdnfonts.com/css/manrope" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/custom-input.js"></script>
 </head>
 <body>
     <!--Бібліотека -> Зображення-->
@@ -154,17 +155,19 @@
 
     <div class="reveal" id="edit-reveal">
         <div>
-            <div class="reveal-title">Редагування мови</div>
+            <div class="reveal-title">Нова цитата</div>
             <div class="reveal-message" style="display: flex; flex-direction: column; gap: 24px;">
                 <div class="input-box">
-                    <label for="lang-name-id">Назва мови</label>
-                    <input id="lang-name-id" name="lang_name" type="text" placeholder="Назва мови" />
-                    <span class="info">Вказати назву на мові орігіналу</span>
+                    <label for="phrase-name">Цитата</label>
+                    <input id="lang-name" name="phrase_name" type="text" placeholder="Цитата" />
                 </div>
                 <div class="input-box">
-                    <label for="lang-name-code">Код мови</label>
-                    <input id="lang-name-code" name="lang_code" type="text" placeholder="Код мови" />
-                    <span class="info">Наприклад: EN, RU, UK</span>
+                    <label for="phrase-author">Автор</label>
+                    <div id="phrase-author" data-type="single" data-name="phrase_author" data-placeholder="Приклад: Haruki Murakami"></div>
+                </div>
+                <div class="input-box">
+                    <div id="phrase-category" data-type="multiple" data-name="phrase_category" data-placeholder="+ Підкатегорія"></div>
+                    <span class="info">Цитата повинна бути прив’язана до підкатегорії</span>
                 </div>
             </div>
             <div class="reveal-buttons">
@@ -213,6 +216,13 @@
 
         const selectLanguageElement = document.getElementById('select-language');
         new CustomSelect(selectLanguageElement);
+
+        const authorSuggestions = ["CEO", "Quality Assurance Tester", "Public Relations Officer", "Compliance Officer"];
+        const categorySuggestions = ["UI", "UX", "Html", "JavaScript", "TypeScript", "Communication", "Problem Solving", "Leadership", "Time Management"];
+
+        new CustomInput(document.getElementById('phrase-author'), authorSuggestions);
+        new CustomInput(document.getElementById('phrase-category'), categorySuggestions);
+
     });     
     
 </script>    
