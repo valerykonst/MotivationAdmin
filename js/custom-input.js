@@ -106,10 +106,12 @@ class CustomInput {
     }
 
     onBlur(event) {
-        const value = event.target.value.toLowerCase();
-        if(!value) {
-            this.input.closest(".input-box").classList.remove('focus')
-        }
+        setTimeout(() => {
+            const value = event.target.value.toLowerCase();
+            if(!value && this.tagsContainer.innerHTML === '') {
+                this.input.closest(".input-box").classList.remove('focus')
+            }
+        }, 500)
     }
 
     updateHighlight(items) {
@@ -138,7 +140,7 @@ class CustomInput {
             tag.appendChild(tagName);
 
             const removeBtn = document.createElement('span');
-            removeBtn.textContent = 'x';
+            //removeBtn.textContent = 'x';
             removeBtn.classList.add('remove-tag');
             removeBtn.addEventListener('click', () => {
                 this.removeItem(item);
@@ -158,6 +160,9 @@ class CustomInput {
         this.selectedItems = this.selectedItems.filter(i => i !== item);
         this.renderTags();
         this.updateHiddenInput();
+        if(this.tagsContainer.innerHTML === '') {
+            this.input.closest(".input-box").classList.remove('focus')
+        }
     }
 
     renderTags() {
@@ -171,7 +176,7 @@ class CustomInput {
             tag.appendChild(tagName);
 
             const removeBtn = document.createElement('span');
-            removeBtn.textContent = 'x';
+            //removeBtn.textContent = 'x';
             removeBtn.classList.add('remove-tag');
             removeBtn.addEventListener('click', () => {
                 this.removeItem(item);

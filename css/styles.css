@@ -665,24 +665,26 @@ div.select > .options li {
 .tags {
     display: flex;
     flex-wrap: wrap;
+    margin: 10px 10px 0 10px;
 }
 .tag {
-    background: #e0e0e0;
-    border-radius: 3px;
     padding: 5px;
-    margin: 2px;
     display: flex;
     align-items: center;
-}
-.tag span {
-    margin-right: 5px;
+    border-radius: 8px;
+    background: var(--transparent-info-16, rgba(0, 167, 111, 0.16));
+    color: var(--components-dark-light-info, #007867);
+    font-size: 13px;
+    font-weight: 500;
 }
 .tag .remove-tag {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 3px;
     cursor: pointer;
-    background: #ff0000;
+    background: url(../images/ic-solar_close-circle-bold.svg) no-repeat center;
     border-radius: 50%;
-    color: white;
-    padding: 0 5px;
 }
 /********************/
 
