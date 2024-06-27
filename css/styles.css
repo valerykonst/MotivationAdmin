@@ -665,7 +665,10 @@ div.select > .options li {
 .tags {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 10px 0 10px;
+    margin: 0 10px;
+}
+.focus .tags {
+    margin-top: 10px;
 }
 .tag {
     padding: 5px;
