@@ -140,7 +140,6 @@ class CustomInput {
             tag.appendChild(tagName);
 
             const removeBtn = document.createElement('span');
-            //removeBtn.textContent = 'x';
             removeBtn.classList.add('remove-tag');
             removeBtn.addEventListener('click', () => {
                 this.removeItem(item);
@@ -176,7 +175,6 @@ class CustomInput {
             tag.appendChild(tagName);
 
             const removeBtn = document.createElement('span');
-            //removeBtn.textContent = 'x';
             removeBtn.classList.add('remove-tag');
             removeBtn.addEventListener('click', () => {
                 this.removeItem(item);

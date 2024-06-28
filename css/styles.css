@@ -325,12 +325,26 @@ input::placeholder {
 }
 .menu-container > menu > li > a {
     display: block;
-    padding: 11px 8px 11px 52px;
+    padding: 11px 8px 11px 12px;
     color: var(--Text-Secondary);
     font-weight: 500;
     line-height: 22px;
     text-decoration: none;
     position: relative;
+}
+.menu-container > menu > li > a > span {
+    display: inline-block;
+    padding-left: 40px;
+}
+.menu-container menu li > a::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+.menu-container menu li.active > a::before {
+    filter: brightness(0) saturate(100%) invert(54%) sepia(34%) saturate(4620%) hue-rotate(148deg) brightness(90%) contrast(94%);
 }
 .menu-container menu li.has-submenu > a:after {
     content: "";
@@ -343,38 +357,43 @@ input::placeholder {
     top: 12px;
     right: 0;
 }
-.menu-container menu li.menu-main > a {
-    background: url(../images/menu/ic-dashboard.svg) no-repeat 12px center;
+.menu-container menu li.menu-main > a::before {
+    background: url(../images/menu/ic-dashboard.svg) no-repeat center;
 }
 .menu-container > menu > li.active > a {
-    filter: brightness(0) saturate(100%) invert(54%) sepia(34%) saturate(4620%) hue-rotate(148deg) brightness(90%) contrast(94%);    
+    margin-right: 16px;
+    background-color: rgba(0, 184, 217, 0.08) !important;
+    border-radius: 8px;
+    color: var(--components-main-light-primary);
 }
 .menu-container menu li.has-submenu.active > a:after {
     background: url(../images/menu/ic-eva_arrow-ios-downward-fill.svg);
+    top: 14px;
+    margin-right: 8px;
 }
-.menu-container menu li.menu-users > a {
-    background: url(../images/menu/ic-user.svg) no-repeat 12px center;
+.menu-container menu li.menu-users > a::before {
+    background: url(../images/menu/ic-user.svg) no-repeat center;
 }
-.menu-container menu li.menu-push > a {
-    background: url(../images/menu/ic-menu-item.svg) no-repeat 12px center;
+.menu-container menu li.menu-push > a::before {
+    background: url(../images/menu/ic-menu-item.svg) no-repeat center;
 }
-.menu-container menu li.menu-langs > a {
-    background: url(../images/menu/dictionary-language-book.svg) no-repeat 12px center;
+.menu-container menu li.menu-langs > a::before {
+    background: url(../images/menu/dictionary-language-book.svg) no-repeat center;
 }
-.menu-container menu li.menu-lib > a {
-    background: url(../images/menu/ic-file.svg) no-repeat 12px center;
+.menu-container menu li.menu-lib > a::before {
+    background: url(../images/menu/ic-file.svg) no-repeat center;
 }
-.menu-container menu li.menu-themes > a {
-    background: url(../images/menu/ic-kanban.svg) no-repeat 12px center;
+.menu-container menu li.menu-themes > a::before {
+    background: url(../images/menu/ic-kanban.svg) no-repeat center;
 }
-.menu-container menu li.menu-archive > a {
-    background: url(../images/menu/ic-folder.svg) no-repeat 12px center;
+.menu-container menu li.menu-archive > a::before {
+    background: url(../images/menu/ic-folder.svg) no-repeat center;
 }
-.menu-container menu li.menu-roles > a {
-    background: url(../images/menu/ic-tour.svg) no-repeat 12px center;
+.menu-container menu li.menu-roles > a::before {
+    background: url(../images/menu/ic-tour.svg) no-repeat center;
 }
-.menu-container menu li.menu-api > a {
-    background: url(../images/menu/ic-label.svg) no-repeat 12px center;
+.menu-container menu li.menu-api > a::before {
+    background: url(../images/menu/ic-label.svg) no-repeat center;
 }
 /* submenu */
 .menu-container li menu {display: none;}
