@@ -647,6 +647,19 @@ div.select > .options li {
     text-decoration: none;
     cursor: pointer;
 }
+div.select > .options li.selected {
+    border-radius: 6px;
+    background: var(--Action-Selected, rgba(145, 158, 171, 0.16));    
+}
+.select.dropdown-menu div.selected {
+    padding-right: 20px;
+    min-width: auto;
+    background: url(../images/ic-eva_arrow-ios-downward-fill.svg) no-repeat right center;
+    border: 0;
+}
+div.select.select.dropdown-menu > div.selected > span {
+    color:  var(--Text-Primary);
+}
 
 /* Custom Input */
 .custom-input {

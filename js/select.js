@@ -1,8 +1,9 @@
 class CustomSelect {
-    constructor(selectElement) {
+    constructor(selectElement,options = {} ) {
         this.selectElement = selectElement;
         this.customSelectElement = null;
         this.hiddenInputElement = null;
+        this.customClass = options.class
         this.init();
     }
 
@@ -22,11 +23,13 @@ class CustomSelect {
 
     createCustomSelect() {
         const options = Array.from(this.selectElement.options);
+        const selectedOption = options.find(o => o.selected )
+        console.log("selected option",selectedOption);
         const customMarkup = `
-            <div class="select">
-                <div class="selected"><span>${options[0].textContent}</span></div>
+            <div class="select ${this.customClass}">
+                <div class="selected"><span>${selectedOption.textContent}</span></div>
                 <menu class="options">
-                    ${options.map((option, index) => index > 0 ? `<li data-value="${option.value}">${option.textContent}</li>` : '').join('')}
+                    ${options.map((option, index) => index >= 0 ? `<li ${option.selected?'class="selected"':''} data-value="${option.value}">${option.textContent}</li>` : '').join('')}
                 </menu>
             </div>
         `;
@@ -43,7 +46,7 @@ class CustomSelect {
         const selectedElement = this.customSelectElement.querySelector('.selected');
         const optionsElement = this.customSelectElement.querySelector('.options');
         const optionItems = optionsElement.querySelectorAll('li');
-
+        
         selectedElement.addEventListener('click', () => {
             optionsElement.style.display = optionsElement.style.display === 'block' ? 'none' : 'block';
         });
@@ -55,6 +58,10 @@ class CustomSelect {
                 this.hiddenInputElement.value = value;
                 selectedElement.querySelector('span').textContent = text;
                 optionsElement.style.display = 'none';
+                optionItems.forEach(oi => {
+                    oi.classList.remove("selected")
+                })
+                item.classList.add("selected")
             });
         });
 

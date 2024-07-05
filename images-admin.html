@@ -168,7 +168,11 @@
                 </table>
                 <div class="paginator">
                     <span>На сторінці :</span>
-                    <span class="selected">5</span>
+                    <select name="page" id="page">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="50" selected="true">50</option>
+                    </select>
                     <span>6-10 of 11</span>
                     <div>
                         <span class="left-arrow inactive"></span>
@@ -308,6 +312,10 @@
 
         const selectStatusElement = document.getElementById('select-status');
         new CustomSelect(selectStatusElement);
+
+        const selectLanguageElement = document.getElementById('page');
+        new CustomSelect(selectLanguageElement, {class: 'dropdown-menu'});
+
     });
 </script>    
 
