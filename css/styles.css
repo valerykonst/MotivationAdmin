@@ -354,7 +354,7 @@ input::placeholder {
     margin: 0 24px 0 8px;
     background: url(../images/menu/ic-eva_arrow-ios-forward-fill.svg);
     position: absolute;
-    top: 12px;
+    top: 14px;
     right: 0;
 }
 .menu-container menu li.menu-main > a::before {

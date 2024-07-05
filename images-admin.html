@@ -256,6 +256,14 @@
 
 
 <script>
+    function toggleSubmenu(el) {
+        if(el.parentElement.classList.contains("active")) {
+            el.parentElement.classList.remove("active")
+        } else {
+            el.parentElement.classList.add("active")
+        }
+    }
+
     function openReveal(elementId) {
         const reveal = document.getElementById(elementId)
         reveal.style.display = "flex"
