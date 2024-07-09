@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySoul</title>
+    <style>
+        @font-face {
+            font-family: 'Fixel';
+            src: url('fonts/FixelVariable.ttf') format("truetype-variations");
+        }
+        @font-face {
+            font-family: 'Tinos';
+            src: url('fonts/Tinos-Bold.ttf') format("truetype-variations");
+        }
+        * {
+            font-family: 'Fixel', Arial;
+            font-size: 1em;
+            color: white;
+        }
+        body {
+            padding: 0 20px;
+            background: url(images/landing/bg-1.jpg) no-repeat black;
+        }
+        header, main, footer {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        header {
+            padding: 47px 0 100px;
+            font-size: 22px;
+            font-weight: 800;
+        }
+        main {
+            min-height: calc(100vh - 112px);
+        }
+        h1 {
+            margin: 0 0 32px;
+            font-family: 'Tinos', Arial;
+            font-size: 103px;
+            line-height: 110px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 26px;
+            margin: 0 0 38px;
+        }
+        .subtitle {
+            margin: 0 0 32px;
+            font-size: 28px;
+        }
+        .apps-container {
+            display: flex; 
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .top-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        ul {
+            margin: 0;
+            padding: 0 0 0 15px;
+            list-style-type: none;
+            list-style-image: url(images/landing/star-05.svg);
+            columns: 3;
+            column-gap: 65px;
+            column-fill: balance;
+        }
+        ul > li {
+            margin: 0 0 60px;
+        }
+        ul > li > span {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: 700;
+        }   
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 112px;
+        }
+        footer > nav {
+            display: flex;
+            gap: 38px;
+        }
+        footer nav a {
+            text-decoration: none;
+        }
+        footer > div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @media (hover:hover) {
+            footer nav a:hover { 
+                text-decoration: underline;
+            }
+        }
+        @media (max-width: 1100px) {
+            body {
+                padding: 0 20px;
+            }
+            header {
+                padding: 35px 0 46px;
+                text-align: center;
+            }
+            .top-container {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            h1 {
+                margin: 0 0 28px;
+                font-size: 38px;
+                line-height: 48px;
+            }
+            h2 {
+                margin: 0 0 36px;
+            }
+            .subtitle {
+                margin: 0 0 28px;
+                font-size: 20px;
+            }
+            .apps-container {
+                justify-content: center;
+                gap: 16px;
+            }
+            ul {
+                columns: 1;
+            }
+            ul > li {
+                margin: 0 0 36px;
+            }
+            footer {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                align-content: center;
+                gap: 20px;
+                height: 182px;
+            }
+            footer > nav {
+                grid-row: 2;
+            }
+            footer > div  {
+                flex-direction: column;
+            }
+            footer > *:last-child {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            My Soul
+        </header>
+        
+        <div class="top-container">
+            <div>
+                <h1>Your daily boost of Motivation</h1>
+                <div class="subtitle">Motivate, inspire, and encourage yourself with the MySoul app – launching soon!</div>
+            </div>
+            <img src="images/landing/MySoulLogo.svg" width="349" height="329" alt="" />
+        </div>
+
+        <div class="apps-container">
+            <a href="#"><img src="images/landing/AppStoreButton.svg" alt="" width="192" height="96" /></a>
+            <a href="#"><img src="images/landing/GooglePlayButton.svg" alt="" width="192" height="96" /></a>
+        </div>
+        <h2>What you’ll gain with the MySoul app:</h2>
+        <ul>
+            <li>
+                <span>Diverse topics</span>
+                The app offers quotes that resonate with every aspect of your life.
+            </li>
+            <li>
+                <span>Offline access</span>
+                Access quotes from the app even without an internet connection.
+            </li>
+            <li>
+                <span>Daily reminders</span>
+                Get daily notifications from the MySoul to stay inspired throughout your day.
+            </li>
+            <li>
+                <span>Share the inspiration</span>
+                Share your favorite quotes on social media, with friends, and family directly from the app.
+            </li>
+            <li>
+                <span>Personalized experience</span>
+                Receive handpicked quotes based on your preferences and mood.
+            </li>
+            <li>
+                <span>Customize your quotes</span>
+                Upload your own photos and create custom themes for your favorite quotes.
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <nav>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy</a>
+        </nav>
+        <div>
+            <span>Follow us</span>
+            <span>
+                <a href="#"><img src="images/landing/instaIcon.svg" alt="" height="32" width="32" /></a>
+                <a href="#"><img src="images/landing/fbIcon.svg" alt="" height="32" width="32" /></a>
+            </span>
+        </div>
+        <div>
+            © All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
