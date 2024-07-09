@@ -81,6 +81,7 @@
             justify-content: space-between;
             align-items: center;
             height: 112px;
+            font-size: 14px;
         }
         footer > nav {
             display: flex;
@@ -102,6 +103,7 @@
         @media (max-width: 1100px) {
             body {
                 padding: 0 20px;
+                background-size: cover;
             }
             header {
                 padding: 35px 0 46px;
@@ -109,6 +111,7 @@
             }
             .top-container {
                 flex-direction: column-reverse;
+                gap: 36px;
                 align-items: center;
                 text-align: center;
             }
@@ -153,6 +156,11 @@
             }
             footer > *:last-child {
                 display: none;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            body {
+                background: url(images/landing/bg_mobile.jpg) no-repeat black;
             }
         }
     </style>
