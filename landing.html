@@ -122,6 +122,7 @@
             }
             h2 {
                 margin: 0 0 36px;
+                text-align: center;
             }
             .subtitle {
                 margin: 0 0 28px;
@@ -131,14 +132,10 @@
                 justify-content: center;
                 gap: 16px;
             }
-            .apps-container img {
-                max-width: 172px;
-            }
             ul {
                 columns: 1;
-            }
-            ul > li {
-                margin: 0 0 36px;
+                margin: 0 auto;
+                max-width: 350px;
             }
             footer {
                 display: grid;
@@ -162,6 +159,17 @@
             body {
                 background: url(images/landing/bg_mobile.jpg) no-repeat black;
                 background-size: cover;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            ul {
+                max-width: none;
+            }
+            ul > li {
+                margin: 0 0 36px;
+            }
+            .apps-container img {
+                max-width: 172px;
             }
         }
     </style>
