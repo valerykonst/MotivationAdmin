@@ -6,24 +6,19 @@
     <title>MySoul - Your Daily Boost of Motivation</title>
     <meta name="description" content="Motivate, inspire, and encourage yourself with the MySoul app. Discover diverse topics, offline access, daily reminders, and personalized experiences. Share your favorite quotes on social media and create custom themes. Stay inspired every day with MySoul!">
     <link rel="icon" type="image/x-icon" href="images/landing/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Fixel';
-            src: url('fonts/FixelVariable.ttf') format("truetype-variations");
-        }
-        @font-face {
-            font-family: 'Tinos';
-            src: url('fonts/Tinos-Bold.ttf') format("truetype-variations");
-        }
         * {
-            font-family: 'Fixel', Arial;
+            font-family: 'Poppins', Arial;
             font-size: 1em;
             color: white;
         }
         body {
             padding: 0 20px;
-            background: rgb(30,5,54);
-            background: url(images/landing/bg_new.png) no-repeat, linear-gradient(-45deg, rgb(10 1 18) 0%, rgba(38, 10, 84, 1) 100%);
+            background: url(images/landing/stars.png) no-repeat, linear-gradient(318deg, #1E0437 9.88%, #5019AA 99.61%);
             background-size: contain;
         }
         header, main, footer {
@@ -41,18 +36,22 @@
         h1 {
             margin: 0 0 32px;
             font-family: 'Tinos', Arial;
-            font-size: 103px;
-            line-height: 110px;
+            font-size: 86px;
+            font-weight: 400;
+            line-height: 90px;
             text-transform: uppercase;
         }
         h2 {
-            font-size: 26px;
             margin: 0 0 38px;
+            font-size: 24px;
             font-weight: 600;
+            line-height: 36px;
         }
         .subtitle {
             margin: 0 0 32px;
-            font-size: 28px;
+            font-size: 26px;
+            font-size: 400;
+            line-height: 39px;
         }
         .apps-container {
             display: flex; 
@@ -79,7 +78,7 @@
             display: block;
             margin-bottom: 4px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
         }   
         footer {
             display: flex;
@@ -160,6 +159,10 @@
             }
         }
         @media screen and (max-width: 550px) {
+            #logo {
+                width: 240px;
+                height: 240px;
+            }
             ul {
                 max-width: none;
             }
@@ -183,7 +186,7 @@
                 <h1>Your daily boost of Motivation</h1>
                 <div class="subtitle">Motivate, inspire, and encourage yourself with the MySoul app – launching soon!</div>
             </div>
-            <img src="images/landing/MySoulLogo.svg" width="349" height="329" alt="" />
+            <img id="logo" src="images/landing/MySoulAppLogo1.svg" width="360" height="360" alt="" />
         </div>
 
         <div class="apps-container">
