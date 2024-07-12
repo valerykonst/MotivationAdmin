@@ -15,10 +15,11 @@
             font-family: 'Poppins', Arial;
             font-size: 1em;
             color: white;
+            box-sizing: border-box;
         }
         body {
             padding: 0 20px;
-            background: url(images/landing/stars.png) no-repeat, linear-gradient(318deg, #1E0437 9.88%, #5019AA 99.61%);
+            background: url(images/landing/stars1.png) no-repeat, linear-gradient(318deg, #1E0437 9.88%, #5019AA 99.61%);
             background-size: contain;
         }
         header, main, footer {
@@ -57,6 +58,31 @@
             display: flex; 
             gap: 24px;
             margin-bottom: 80px;
+        }
+        .app-button {
+            display: flex;
+            width: 196px;
+            padding: 8px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(12.04979133605957px);
+            cursor: pointer;         
+        }
+        .app-button > span > span {
+            white-space: nowrap;
+        }
+        .app-button > span > span:first-child {
+            font-size: 12px;
+        }
+        .app-button > span > span:last-child {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
         }
         .top-container {
             display: flex;
@@ -170,8 +196,11 @@
             ul > li {
                 margin: 0 0 36px;
             }
-            .apps-container img {
+            .app-button {
                 max-width: 172px;
+            }
+            .app-button > span > span:last-child {
+                font-size: 16px;
             }
         }
     </style>
@@ -191,9 +220,22 @@
         </div>
 
         <div class="apps-container">
-            <a href="#"><img src="images/landing/AppStoreButton.svg" alt="" width="192" height="96" /></a>
-            <a href="#"><img src="images/landing/GooglePlayButton.svg" alt="" width="192" height="96" /></a>
+            <a class="app-button">
+                <img src="images/landing/apple.svg" alt="" />
+                <span>
+                    <span>Get it on</span>
+                    <span>App Store</span>
+                </span>
+            </a>
+            <a class="app-button">
+                <img src="images/landing/google_play.svg" alt="" />
+                <span>
+                    <span>Get it on</span>
+                    <span>Google Play</span>
+                </span>
+            </a>
         </div>
+
         <h2>What you’ll gain with the MySoul app:</h2>
         <ul>
             <li>
