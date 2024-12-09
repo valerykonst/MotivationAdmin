@@ -19,28 +19,29 @@
         }
         body {
             padding: 0 20px;
-            background: url(images/landing/stars1.png) no-repeat, linear-gradient(318deg, #1E0437 9.88%, #5019AA 99.61%);
-            background-size: contain;
+            background: url(images/landing/stars.png) no-repeat, linear-gradient(66deg, #1F2641 9.27%, #3D4D94 99.39%);
+            background-size:cover;
         }
         header, main, footer {
             max-width: 1280px;
             margin: 0 auto;
         }
         header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             padding: 47px 0 100px;
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 300;
         }
         main {
             min-height: calc(100vh - 112px);
         }
         h1 {
             margin: 0 0 32px;
-            font-family: 'Tinos', Arial;
-            font-size: 86px;
-            font-weight: 400;
-            line-height: 90px;
-            text-transform: uppercase;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 82px;
         }
         h2 {
             margin: 0 0 38px;
@@ -49,7 +50,7 @@
             line-height: 36px;
         }
         .subtitle {
-            margin: 0 0 32px;
+            margin: 0 0 24px;
             font-size: 26px;
             font-size: 400;
             line-height: 39px;
@@ -61,16 +62,19 @@
         }
         .app-button {
             display: flex;
-            width: 196px;
-            padding: 8px 20px;
+            width: 177px;
+            padding: 8px 20px 8px 10px;
             justify-content: center;
             align-items: center;
-            gap: 4px;
+            gap: 10px;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(0, 0, 0, 0.12);
+            border: 1px solid #494F66;
+            background: #1C223B;
             backdrop-filter: blur(12.04979133605957px);
             cursor: pointer;         
+            line-height: 0.8em;
+            text-decoration: none;
+            text-align: left;
         }
         .app-button > span > span {
             white-space: nowrap;
@@ -81,7 +85,7 @@
         .app-button > span > span:last-child {
             display: block;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 500;
             line-height: 28px;
         }
         .top-container {
@@ -116,18 +120,24 @@
         footer > nav {
             display: flex;
             gap: 38px;
+            color: #F0EDF5;
         }
         footer nav a {
             text-decoration: none;
+            color: #F0EDF5;
         }
         footer > div {
             display: flex;
             align-items: center;
             gap: 8px;
+            color: #F0EDF5;
         }
         @media (hover:hover) {
             footer nav a:hover { 
                 text-decoration: underline;
+            }
+            .app-button:hover {
+                background-color: #171C30;
             }
         }
         @media (max-width: 1100px) {
@@ -135,6 +145,7 @@
                 padding: 0 20px;
             }
             header {
+                justify-content: center;
                 padding: 35px 0 46px;
                 text-align: center;
             }
@@ -181,26 +192,30 @@
             footer > div  {
                 flex-direction: column;
             }
-            footer > *:last-child {
-                display: none;
-            }
         }
         @media screen and (max-width: 550px) {
             #logo {
-                width: 240px;
-                height: 240px;
+                width: 200px;
+                height: 208px;
+            }
+            h1 {
+                margin: 0 0 20px;
+                font-size: 32px;
             }
             ul {
                 max-width: none;
             }
             ul > li {
                 margin: 0 0 36px;
+                font-weight: 16px;
             }
-            .app-button {
-                max-width: 172px;
+            .subtitle {margin-bottom: 20px;}
+            .apps-container {
+                flex-direction: column;
+                align-items: center;
             }
-            .app-button > span > span:last-child {
-                font-size: 16px;
+            ul > li > span {
+                font-weight: 600;
             }
         }
     </style>
@@ -217,33 +232,35 @@
 <body>
     <main>
         <header>
+            <img src="images/landing/logo.svg" alt="" />
             MySoul
         </header>
         
         <div class="top-container">
             <div>
-                <h1>Your daily boost of Motivation</h1>
-                <div class="subtitle">Motivate, inspire, and encourage yourself with the MySoul app – launching soon!</div>
+                <h1>Uplift your mind with MySoul motivation</h1>
+                <div class="subtitle">Get inspired—download now!</div>
+                <div class="apps-container">
+                    <a class="app-button" href="https://apps.apple.com/app/id6502908322">
+                        <img style="position: relative; top: -2px" src="images/landing/apple.svg" alt="" />
+                        <span>
+                            <span>Download on the</span>
+                            <span>App Store</span>
+                        </span>
+                    </a>
+                    <a class="app-button" href="https://play.google.com/store/apps/details?id=com.valery2022.motivation">
+                        <img src="images/landing/google_play.svg" alt="" />
+                        <span>
+                            <span>GET IT ON</span>
+                            <span>Google Play</span>
+                        </span>
+                    </a>
+                </div>
+        
             </div>
-            <img id="logo" src="images/landing/MySoulAppLogo1.svg" width="360" height="360" alt="" />
+            <img id="logo" src="images/landing/girl.png" width="331" height="344" alt="" />
         </div>
 
-        <div class="apps-container">
-            <a class="app-button">
-                <img src="images/landing/apple.svg" alt="" />
-                <span>
-                    <span>Get it on</span>
-                    <span>App Store</span>
-                </span>
-            </a>
-            <a class="app-button">
-                <img src="images/landing/google_play.svg" alt="" />
-                <span>
-                    <span>Get it on</span>
-                    <span>Google Play</span>
-                </span>
-            </a>
-        </div>
 
         <h2>What you’ll gain with the MySoul app:</h2>
         <ul>
@@ -281,7 +298,7 @@
             <span>Follow us</span>
             <span>
                 <a href="#"><img src="images/landing/instaIcon.svg" alt="" height="32" width="32" /></a>
-                <a href="#"><img src="images/landing/fbIcon.svg" alt="" height="32" width="32" /></a>
+                <a href="#"><img src="images/landing/iconoir_tiktok.svg" alt="" height="32" width="32" /></a>
             </span>
         </div>
         <div>
